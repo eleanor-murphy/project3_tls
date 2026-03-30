@@ -5,6 +5,8 @@ import json
 HOST = "127.0.0.1"
 PORT = 8443
 
+addr = (HOST, PORT)
+
 with socket.create_connection((HOST, PORT)) as sock:
     request = {"command": "GET_TIME"}
     sock.sendall(json.dumps(request).encode())
